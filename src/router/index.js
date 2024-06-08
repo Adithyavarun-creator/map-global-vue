@@ -43,6 +43,8 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+  linkActiveClass: "border-indigo-500",
+  linkExactActiveClass: "border-indigo-700",
 });
 
 export default router;
