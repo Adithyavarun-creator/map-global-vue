@@ -1,5 +1,16 @@
 <template>
   <!-- <div class="h-40 -mt-6"></div> -->
+  <div class="mt-10 mb-10 flex flex-col gap-3 items-center justify-center">
+    <h1 class="text-3xl">
+      This is an animated world map where you can zoom in and click for indepth
+      regions to know
+    </h1>
+    <a
+      href="https://www.amcharts.com/demos/drill-down-to-countries/"
+      class="text-2xl text-blue-500 font-semibold"
+      >View Docs in website</a
+    >
+  </div>
 </template>
 
 <!-- Styles -->

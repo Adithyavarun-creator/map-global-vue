@@ -1,4 +1,13 @@
 <template>
+  <div class="mt-10 mb-10 flex flex-col gap-3 items-center justify-center">
+    <h1 class="text-3xl">This is a demo version of syncfusion</h1>
+    <a
+      href="https://ej2.syncfusion.com/vue/documentation/maps/getting-started"
+      class="text-2xl text-blue-500 font-semibold"
+      >View Docs</a
+    >
+  </div>
+
   <div class="width">
     <div class="col-lg-9 control-section">
       <div class="content-wrapper">
@@ -56,26 +65,37 @@
         </div>
       </div>
     </div>
-    <!-- 
-    <div class="col-lg-3 property-section">
-      <table id="property" title="Properties" style="width: 100%; margin-left: -10px">
+    <!-- <div class="col-lg-3 property-section">
+      <table
+        id="property"
+        title="Properties"
+        style="width: 100%; margin-left: -10px"
+      >
         <tbody>
           <tr style="height: 50px">
             <td>
-              <div class="property-text">Bind markers shape from data source</div>
+              <div class="property-text">
+                Bind markers shape from data source
+              </div>
             </td>
             <td>
-              <div style="margin-left: 30px; padding-top: 0px; margin-top: -7px">
+              <div
+                style="margin-left: 30px; padding-top: 0px; margin-top: -7px"
+              >
                 <ejs-checkbox id="shape" :change="changeshape"></ejs-checkbox>
               </div>
             </td>
           </tr>
           <tr style="height: 100px">
             <td>
-              <div class="property-text">Bind markers color from data source</div>
+              <div class="property-text">
+                Bind markers color from data source
+              </div>
             </td>
             <td>
-              <div style="margin-left: 30px; padding-top: 0px; margin-top: -7px">
+              <div
+                style="margin-left: 30px; padding-top: 0px; margin-top: -7px"
+              >
                 <ejs-checkbox id="color" :change="changecolor"></ejs-checkbox>
               </div>
             </td>
@@ -149,7 +169,7 @@ export default {
 
 <style scoped>
 .width {
-  width: 80%;
+  width: 100%;
 }
 
 .toolback {

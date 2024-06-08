@@ -1,4 +1,17 @@
-<template></template>
+<template>
+  <div class="mt-10 mb-10 flex flex-col gap-3 items-center justify-center">
+    <h1 class="text-3xl">
+      This is an animated world map that has numbers as points in each location
+      where you can zoom in and see the regions and by clicking dots you can see
+      region names
+    </h1>
+    <a
+      href="https://www.amcharts.com/demos/world-map-with-clustered-points/"
+      class="text-2xl text-blue-500 font-semibold"
+      >View Docs in website</a
+    >
+  </div>
+</template>
 
 <!-- Styles -->
 <style>

@@ -1,5 +1,14 @@
 <template>
-  <div>
+  <div class="mt-10 mb-10 flex flex-col gap-3 items-center justify-center">
+    <h1 class="text-3xl">
+      This is a demo version of syncfusion app with marker location and on hover
+      you can see location name
+    </h1>
+    <a
+      href="https://ej2.syncfusion.com/vue/documentation/maps/getting-started"
+      class="text-2xl text-blue-500 font-semibold"
+      >View Docs</a
+    >
     <div class="control-section">
       <ejs-maps
         id="container"
