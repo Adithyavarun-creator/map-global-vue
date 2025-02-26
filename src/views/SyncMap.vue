@@ -6,6 +6,7 @@
     </h1>
     <a
       href="https://ej2.syncfusion.com/vue/documentation/maps/getting-started"
+      target="_blank"
       class="text-2xl text-blue-500 font-semibold"
       >View Docs</a
     >

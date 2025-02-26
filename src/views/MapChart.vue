@@ -3,6 +3,7 @@
     <h1 class="text-3xl">This is a demo version of syncfusion</h1>
     <a
       href="https://ej2.syncfusion.com/vue/documentation/maps/getting-started"
+      target="_blank"
       class="text-2xl text-blue-500 font-semibold"
       >View Docs</a
     >

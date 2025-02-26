@@ -8,7 +8,7 @@
         exactActiveClass="border border-indigo-700"
         to="/syncfusion"
         class="button"
-        >Syncfusion Map</RouterLink
+        >Syncfusion Map (Paid)</RouterLink
       >
 
       <RouterLink
@@ -16,7 +16,7 @@
         exactActiveClass="border border-indigo-700"
         to="/svgmap"
         class="button"
-        >Svg Map</RouterLink
+        >Svg Map (Free)</RouterLink
       >
 
       <RouterLink
@@ -24,7 +24,7 @@
         exactActiveClass="border border-indigo-700"
         to="/syncmap"
         class="button"
-        >Sync Map</RouterLink
+        >Sync Map (Paid)</RouterLink
       >
 
       <RouterLink
@@ -32,7 +32,7 @@
         exactActiveClass="border border-indigo-700"
         to="/animate"
         class="button"
-        >Animated Map</RouterLink
+        >Animated Map (Free)</RouterLink
       >
 
       <RouterLink
@@ -40,7 +40,23 @@
         exactActiveClass="border border-indigo-700"
         to="/dotted"
         class="button"
-        >Dotted Map</RouterLink
+        >Dotted Map (Free)</RouterLink
+      >
+
+      <RouterLink
+        activeClass="border border-indigo-500 p-2"
+        exactActiveClass="border border-indigo-700"
+        to="/detailed"
+        class="button"
+        >IMS World Map Detail (Free)</RouterLink
+      >
+
+      <RouterLink
+        activeClass="border border-indigo-500 p-2"
+        exactActiveClass="border border-indigo-700"
+        to="/geoims"
+        class="button"
+        >GeoIMS Map Detail (Free)</RouterLink
       >
     </nav>
   </div>

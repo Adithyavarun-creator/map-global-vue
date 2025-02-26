@@ -1,12 +1,12 @@
 <template>
   <div class="mt-10 mb-10 flex flex-col gap-3 items-center justify-center">
-    <h1 class="text-3xl">
-      This is an animated world map that has numbers as points in each location
-      where you can zoom in and see the regions and by clicking dots you can see
-      region names
+    <h1 class="text-3xl text-center">
+      This is the map which we are going to add in our frontend part of our IMS
+      website
     </h1>
     <a
       href="https://www.amcharts.com/demos/world-map-with-clustered-points/"
+      target="_blank"
       class="text-2xl text-blue-500 font-semibold"
       >View Docs in website</a
     >
@@ -17,7 +17,11 @@
 <style>
 #chartdiv {
   width: 100%;
-  height: 550px;
+  height: 100vh;
+}
+
+.am5-layer-30 {
+  color: red;
 }
 </style>
 
@@ -25,7 +29,10 @@
 
 <!-- Chart code -->
 <script setup>
-import { polygonData } from "../datas/countryDatas.js";
+import axios from "axios";
+import { onMounted, ref } from "vue";
+
+//const cities = ref([]);
 
 am5.ready(function () {
   // Create root element
@@ -51,32 +58,16 @@ am5.ready(function () {
 
   // Create main polygon series for countries
   // https://www.amcharts.com/docs/v5/charts/map-chart/map-polygon-series/
-  // var polygonSeries = chart.series.push(
-  //   am5map.MapPolygonSeries.new(root, {
-  //     geoJSON: am5geodata_worldLow,
-  //     exclude: ["AQ"],
-  //   })
-  // );
-
-  // polygonSeries.mapPolygons.template.setAll({
-  //   fill: am5.color(0xdadada),
-  // });
-
-  let polygonSeries = chart.series.push(
+  var polygonSeries = chart.series.push(
     am5map.MapPolygonSeries.new(root, {
       geoJSON: am5geodata_worldLow,
-      fill: am5.color(0x22ff55),
-      stroke: am5.color(0xffffff),
       exclude: ["AQ"],
     })
   );
 
   polygonSeries.mapPolygons.template.setAll({
-    tooltipText: "{name}",
-    templateField: "polygonSettings",
+    fill: am5.color(0xdadada),
   });
-
-  polygonSeries.data.setAll(polygonData);
 
   // Create point series for markers
   // https://www.amcharts.com/docs/v5/charts/map-chart/map-point-series/
@@ -95,8 +86,7 @@ am5.ready(function () {
       am5.Circle.new(root, {
         radius: 8,
         tooltipY: 0,
-        // fill: am5.color(0x0693e3),
-        fill: am5.color(0xdc7d11),
+        fill: am5.color(0x0693e3),
       })
     );
 
@@ -105,8 +95,7 @@ am5.ready(function () {
         radius: 12,
         fillOpacity: 0.3,
         tooltipY: 0,
-        //fill: am5.color(0x0693e3),
-        fill: am5.color(0xdc7d11),
+        fill: am5.color(0x0693e3),
       })
     );
 
@@ -115,8 +104,7 @@ am5.ready(function () {
         radius: 16,
         fillOpacity: 0.3,
         tooltipY: 0,
-        //fill: am5.color(0x0693e3),
-        fill: am5.color(0xdc7d11),
+        fill: am5.color(0x0693e3),
       })
     );
 
@@ -124,12 +112,14 @@ am5.ready(function () {
       am5.Label.new(root, {
         centerX: am5.p50,
         centerY: am5.p50,
-        fill: am5.color(0xffffff),
+        fill: am5.color(0x0693e3),
         populateText: true,
         fontSize: "8",
         text: "{value}",
       })
     );
+
+    //console.log(label);
 
     container.events.on("click", function (e) {
       pointSeries.zoomToCluster(e.target.dataItem);
@@ -140,13 +130,12 @@ am5.ready(function () {
     });
   });
 
-  // Create regular bullets //0xff8c00
+  // Create regular bullets
   pointSeries.bullets.push(function () {
     var circle = am5.Circle.new(root, {
       radius: 6,
       tooltipY: 0,
-      // fill: am5.color(0x0693e3),
-      fill: am5.color(0xdc7d11),
+      fill: am5.color(0x0693e3),
       tooltipText: "{title}",
     });
 
@@ -155,8 +144,32 @@ am5.ready(function () {
     });
   });
 
+  // const url = "/api/JrsRegionCountry/getGeoJrsCountry";
+
+  ///api/JrsRegionCountry/getGeoJrsCountry
+
+  //onMounted(() => {
+  // const getCities = async (url) => {
+  //   const { data: cities } = await axios.get(url);
+  //   // console.log(cities[0].country_name);
+  //   for (var i = 0; i < cities.length; i++) {
+  //     var city = cities[i];
+  //     addCity(city.longitude, city.latitude, city.region_country_name);
+  //   }
+  //   function addCity(longitude, latitude, title) {
+  //     pointSeries.data.push({
+  //       geometry: { type: "Point", coordinates: [longitude, latitude] },
+  //       title: title,
+  //     });
+  //}
+  //};
+  // setTimeout(() => {
+  //   getCities(url) ? getCities(url) : cities;
+  // }, 3000);
+  // });
+
   // Set data
-  var cities = [
+  let cities = [
     { title: "Vienna", latitude: 48.2092, longitude: 16.3728 },
     { title: "Minsk", latitude: 53.9678, longitude: 27.5766 },
     { title: "Brussels", latitude: 50.8371, longitude: 4.3676 },
@@ -325,7 +338,7 @@ am5.ready(function () {
   ];
 
   for (var i = 0; i < cities.length; i++) {
-    var city = cities[i];
+    let city = cities[i];
     addCity(city.longitude, city.latitude, city.title);
   }
 

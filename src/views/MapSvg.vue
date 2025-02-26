@@ -6,6 +6,7 @@
       </h1>
       <a
         href="https://www.amcharts.com/svg-maps/?map=world"
+        target="_blank"
         class="text-2xl text-blue-500 font-semibold"
         >View Docs in website</a
       >
